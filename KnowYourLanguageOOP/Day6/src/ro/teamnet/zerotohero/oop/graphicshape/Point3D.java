@@ -1,7 +1,7 @@
 package ro.teamnet.zerotohero.oop.graphicshape;
 
 /**
- * Created by ramona.raducu on 7/4/2017.
+ * Created by Cristina.Constantin on 7/4/2017.
  */
 public class Point3D extends Point {
     private int zPos;

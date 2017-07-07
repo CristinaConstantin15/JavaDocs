@@ -1,30 +1,29 @@
 package ro.teamnet.zerotohero.oop.graphicshape;
 
 /**
- * Created by ramona.raducu on 7/4/2017.
+ * Created by Cristina.Constantin on 7/4/2017.
  */
-public class Shape extends AbstractShape implements ShapeBehaviour   {
+public class Shape extends AbstractShape implements ShapeBehaviour{
     protected int color;
     protected float saturation;
 
-    public double area() {
-        return 0;
-    }
-
-    public void setColor (int color)  {
-        this.color = color;
-    }
-
-    public int getColor () {
+    public int getColor() {
         return color;
     }
 
+    public void setColor(int color) {
+        this.color = color;
+    }
 
-    public void setSaturation (float saturation)  {
+    public float getSaturation() {
+        return saturation;
+    }
+
+    public void setSaturation(float saturation) {
         this.saturation = saturation;
     }
 
-    public double getSaturation () {
-        return saturation;
+    public double area(){
+        return 0;
     }
 }

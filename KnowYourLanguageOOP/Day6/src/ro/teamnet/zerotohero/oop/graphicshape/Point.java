@@ -1,17 +1,16 @@
 package ro.teamnet.zerotohero.oop.graphicshape;
 
 /**
- * Created by ramona.raducu on 7/4/2017.
+ * Created by Cristina.Constantin on 7/4/2017.
  */
 public class Point {
-    int xPos;
-    int yPos;
+    private int xPos;
+    private int yPos;
 
     public Point(int xPos, int yPos) {
         this.xPos = xPos;
         this.yPos = yPos;
     }
-
 
     @Override
     public boolean equals(Object other) {
@@ -29,8 +28,5 @@ public class Point {
         }
         return false;
     }
-
-
-
 
 }
