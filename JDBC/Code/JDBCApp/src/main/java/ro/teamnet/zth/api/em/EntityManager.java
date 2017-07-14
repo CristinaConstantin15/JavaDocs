@@ -1,5 +1,8 @@
 package ro.teamnet.zth.api.em;
 
+import ro.teamnet.zth.appl.domain.Department;
+import ro.teamnet.zth.appl.domain.Employee;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -15,4 +18,5 @@ public interface EntityManager {
     <T> T update(T entity);
     void delete(Object entity);
     <T> List<T> findByParams(Class<T> entityClass, Map<String, Object> params);
+    List<Employee> match(Class<Employee> entityClass, Class<Department> entityClass, String param);
 }
