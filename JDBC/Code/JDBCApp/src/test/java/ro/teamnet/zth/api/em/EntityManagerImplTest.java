@@ -40,8 +40,13 @@ public class EntityManagerImplTest {
     public void testInsertMethod(){
         EntityManagerImpl ent = new EntityManagerImpl();
         Department dep = new Department();
-        Object value = ent.insert(dep);
-        assertFalse(value == null);
+        dep.setDepartmentName("Piroman");
+        dep.setLocation(1700L);
+        Department nou = (Department) ent.insert(dep);
+
+        assertEquals(nou.getDepartmentName(), "Piroman");
+        assertEquals((Object)nou.getId(), 271L);
+
     }
 
     @Test

@@ -44,7 +44,7 @@ public class EntityManagerImpl implements EntityManager{
         query.addCondition(cond);
         String q = query.createQuery();
 
-        System.out.println(q);
+        //System.out.println(q);
 
         try{
             Statement stm = con.createStatement();
@@ -111,7 +111,7 @@ public class EntityManagerImpl implements EntityManager{
         for(ColumnInfo col : columns){
             if(col.isId()){
                 try {
-                    col.setValue(getNextIdVal(tableName, col.getColumnName()));
+                    col.setValue(getNextIdVal(tableName, col.getDbColumnName()));
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
@@ -132,13 +132,15 @@ public class EntityManagerImpl implements EntityManager{
 
         QueryBuilder query = new QueryBuilder();
         query.setQueryType(QueryType.INSERT);
-        query.setTableName(tableName);
         query.addQueryColumns(columns);
+        query.setTableName(tableName);
+        String q = query.createQuery();
+        //System.out.println(q);
 
         try {
             assert con != null;
             Statement stm = con.createStatement();
-            ResultSet rst = stm.executeQuery(query.createQuery());
+            ResultSet rst = stm.executeQuery(q);
             return findById(entity.getClass(), 271L);
         } catch (SQLException e) {
             e.printStackTrace();
