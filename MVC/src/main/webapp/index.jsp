@@ -10,8 +10,7 @@
 <div>
 
     <form id="form1" name="app" action="app">
-        <label for="user">User:</label>
-        <input type="text" id="user" name="user"/>
+
     </form>
 
 </div>
